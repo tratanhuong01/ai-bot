@@ -11,28 +11,30 @@ import CarouselButton from "./carousel-button";
 
 const Teams = () => {
   return (
-    <Carousel>
-      <div className="relative">
-        <CarouselContent>
-          <CarouselItem className="basis-1/3">
-            <ItemTeam />
-          </CarouselItem>
-          <CarouselItem className="basis-1/3">
-            <ItemTeam />
-          </CarouselItem>
-          <CarouselItem className="basis-1/3">
-            <ItemTeam />
-          </CarouselItem>
-          <CarouselItem className="basis-1/3">
-            <ItemTeam />
-          </CarouselItem>
-          <CarouselItem className="basis-1/3">
-            <ItemTeam />
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselButton />
-      </div>
-    </Carousel>
+    <div id="teams" className="pt-12">
+      <Carousel>
+        <div className="relative">
+          <CarouselContent>
+            <CarouselItem className="basis-1/3">
+              <ItemTeam />
+            </CarouselItem>
+            <CarouselItem className="basis-1/3">
+              <ItemTeam />
+            </CarouselItem>
+            <CarouselItem className="basis-1/3">
+              <ItemTeam />
+            </CarouselItem>
+            <CarouselItem className="basis-1/3">
+              <ItemTeam />
+            </CarouselItem>
+            <CarouselItem className="basis-1/3">
+              <ItemTeam />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselButton />
+        </div>
+      </Carousel>
+    </div>
   );
 };
 

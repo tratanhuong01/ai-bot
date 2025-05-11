@@ -7,6 +7,14 @@ import CustomerReviews from "@/modules/customer-reviews";
 import OutPricingPlans from "@/modules/our-pricing-plans";
 import Teams from "@/modules/teams";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  openGraph: {
+    title: "Home",
+  },
+};
 
 const HomePage = () => {
   return (
