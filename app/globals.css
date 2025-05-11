@@ -161,3 +161,26 @@
 .banner-background {
   background: url("/images/banner-background.jpg");
 }
+
+.our-pricing-plans {
+  background: url("/images/pricing-plan-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes identifier {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-bounce-infinite {
+  animation: identifier 2s infinite;
+}

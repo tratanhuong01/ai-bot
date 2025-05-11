@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { PenIcon } from "lucide-react";
 import React from "react";
 import ItemBlog from "../item-blog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const LatestBlog = () => {
   return (
@@ -16,9 +23,22 @@ const LatestBlog = () => {
           <span>See more</span>
         </Button>
       </div>
-      <div className="w-2/3 grid grid-cols-2 gap-8">
-        <ItemBlog />
-        <ItemBlog />
+      <div className="w-2/3">
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem className="basis-1/2">
+              <ItemBlog />
+            </CarouselItem>
+            <CarouselItem className="basis-1/2">
+              <ItemBlog />
+            </CarouselItem>
+            <CarouselItem className="basis-1/2">
+              <ItemBlog />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselNext />
+          <CarouselPrevious />
+        </Carousel>
       </div>
     </div>
   );

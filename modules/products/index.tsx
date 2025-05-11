@@ -1,7 +1,17 @@
 import React from "react";
+import ItemProduct from "./item-product";
 
-const Products = () => {
-  return <div>Products</div>;
+const ProductList = () => {
+  return (
+    <div className="grid grid-cols-3 gap-8 py-8">
+      <ItemProduct />
+      <ItemProduct />
+      <ItemProduct />
+      <ItemProduct />
+      <ItemProduct />
+      <ItemProduct />
+    </div>
+  );
 };
 
-export default Products;
+export default ProductList;
