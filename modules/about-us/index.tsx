@@ -4,8 +4,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="flex items-center gap-20 py-20">
-      <div className="w-7/12 relative">
+    <div className="lg:flex lg:items-center gap-20 py-20">
+      <div className="w-full lg:w-7/12 relative">
         <div style={{ paddingTop: "100%" }} />
         <Image
           src="https://ainext-react.vercel.app/assets/about-2-CzRZEzfO.jpg"
@@ -14,7 +14,7 @@ const AboutUs = () => {
           fill
         />
       </div>
-      <div className="text-gray-400 w-5/12">
+      <div className="text-gray-400 w-full mt-8 lg:mt-0 lg:w-5/12">
         <span className="bg-[#290481] py-1 px-4 rounded-sm whitespace-nowrap block max-w-min text-white">
           About Us
         </span>

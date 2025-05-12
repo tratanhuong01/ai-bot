@@ -3,7 +3,7 @@ import React from "react";
 
 const BrandList = () => {
   return (
-    <div className="grid grid-cols-5 gap-12 py-10">
+    <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-12 py-10 text-center">
       <Image
         src="https://ainext-react.vercel.app/assets/01-CL3Fgejd.png"
         alt="brand"

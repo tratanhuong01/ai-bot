@@ -31,7 +31,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
       )}
       {headerMode === "banner" && (
         <div className="h-[708px] container flex-row gap-3 grid">
-          <div className="flex flex-col justify-center h-full w-7/12">
+          <div className="flex flex-col justify-center h-full lg:w-7/12">
             <span className="bg-[#290481] py-1 px-4 rounded-sm max-w-min whitespace-nowrap">
               Fully Dynamic
             </span>
@@ -79,7 +79,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
           alt="Banner Image"
           width={578}
           height={708}
-          className="absolute right-0 bottom-0"
+          className="lg:block hidden absolute right-0 bottom-0"
         />
       )}
     </div>
