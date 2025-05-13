@@ -15,21 +15,11 @@ const Teams = () => {
       <Carousel>
         <div className="relative">
           <CarouselContent>
-            <CarouselItem className="basis-1/3">
-              <ItemTeam />
-            </CarouselItem>
-            <CarouselItem className="basis-1/3">
-              <ItemTeam />
-            </CarouselItem>
-            <CarouselItem className="basis-1/3">
-              <ItemTeam />
-            </CarouselItem>
-            <CarouselItem className="basis-1/3">
-              <ItemTeam />
-            </CarouselItem>
-            <CarouselItem className="basis-1/3">
-              <ItemTeam />
-            </CarouselItem>
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <CarouselItem key={item} className="md:basis-1/2 lg:basis-1/3">
+                <ItemTeam />
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselButton />
         </div>

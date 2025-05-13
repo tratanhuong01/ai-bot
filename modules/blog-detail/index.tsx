@@ -4,7 +4,7 @@ import BlogCategory from "./blog-category";
 
 const BlogDetail = () => {
   return (
-    <div className="flex flex-row gap-8 py-8 items-start">
+    <div className="lg:flex lg:flex-row gap-8 py-8 items-start">
       <BlogContent />
       <BlogCategory />
     </div>

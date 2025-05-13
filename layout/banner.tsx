@@ -54,7 +54,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
               <span className="text-gray-700 px-4 cursor-pointer">deep ai</span>
               <Button className="h-12 w-32">Generate</Button>
             </div>
-            <div className="flex flex-row gap-3 mt-4">
+            <div className="flex flex-row gap-3 mt-4 flex-wrap">
               <span>Popular tag:</span>
               <span className="bg-[#4B3A5E] py-1 px-4 rounded-sm max-w-min whitespace-nowrap">
                 Fully Dynamic

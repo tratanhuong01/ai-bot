@@ -6,13 +6,13 @@ import React from "react";
 
 const FormComment = () => {
   return (
-    <div className="mt-8">
+    <div className="mt-8 mb-8 lg:mb-0">
       <p className="text-2xl font-semibold">Leave a Reply</p>
       <p className="text-gray-400 mt-2 mb-4">
         Your email address will not be published.Required fields are marked *
       </p>
       <form action="" className="flex flex-col gap-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input placeholder="Name" className="bg-white h-12" />
           <Input placeholder="Email" className="bg-white h-12" />
         </div>

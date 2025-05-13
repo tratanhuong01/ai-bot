@@ -7,7 +7,7 @@ import FormComment from "../form-comment";
 
 const BlogContent = () => {
   return (
-    <div className="w-2/3">
+    <div className="lg:w-2/3">
       <div className="w-full relative h-[500px] flex flex-col">
         <Image
           src="/images/member1.jpg"

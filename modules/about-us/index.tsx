@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="lg:flex lg:items-center gap-20 py-20">
+    <div className="lg:flex lg:items-center gap-20 py-10 md:py-20">
       <div className="w-full lg:w-7/12 relative">
         <div style={{ paddingTop: "100%" }} />
         <Image

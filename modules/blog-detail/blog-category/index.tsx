@@ -5,7 +5,7 @@ import React from "react";
 
 const BlogCategory = () => {
   return (
-    <div className="bg-[#111618] p-5 w-1/3 flex flex-col gap-4">
+    <div className="bg-[#111618] p-5 lg:w-1/3 flex flex-col gap-4">
       <p className="text-xl font-bold">Search</p>
       <div className="flex flex-row">
         <Input

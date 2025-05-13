@@ -32,7 +32,7 @@ const OutPricingPlans = () => {
         Best Pricing Plans
       </span>
       <p className="text-5xl font-bold text-center">Our Pricing Plans</p>
-      <div className="grid grid-cols-3 gap-8 mt-16">
+      <div className="gird-cols-1 grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
         {Object.keys(pricePlans).map((key, index) => (
           <ItemPrice
             key={key}

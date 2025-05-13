@@ -7,7 +7,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="py-8 border-t border-gray-900">
-      <div className="container grid grid-cols-4 gap-6 pb-8">
+      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-8">
         <div>
           <Link href="" className="text-2xl font-bold">
             AINext

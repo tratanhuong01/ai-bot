@@ -33,7 +33,7 @@ const CarouselPrevious = () => {
 
 const CarouselButton = () => {
   return (
-    <div className="my-8 lg:my-4 lg:absolute flex justify-center mx-auto lg:mt-0 top-1/2 transform -left-12 -translate-y-1/2 gap-4">
+    <div className="my-8 lg:my-4 flex justify-center mx-auto lg:mt-0 gap-4">
       <CarouselPrevious />
       <CarouselNext />
     </div>

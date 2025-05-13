@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { PenIcon } from "lucide-react";
 import React from "react";
@@ -6,14 +8,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+import CarouselButton from "./carousel-button";
 
 const LatestBlog = () => {
   return (
-    <div className="flex flex-row gap-8 py-8">
-      <div className="w-1/3">
+    <div className="flex flex-col lg:flex-row gap-8 py-8">
+      <div className="lg:w-1/3">
         <span className="bg-[#290481] py-1 px-4 rounded-sm max-w-min whitespace-nowrap">
           Our Latest News
         </span>
@@ -23,23 +24,22 @@ const LatestBlog = () => {
           <span>See more</span>
         </Button>
       </div>
-      <div className="w-2/3">
-        <Carousel>
+      <Carousel>
+        <div className="lg:w-2/3">
           <CarouselContent>
-            <CarouselItem className="basis-1/2">
+            <CarouselItem className="md:basis-1/2">
               <ItemBlog />
             </CarouselItem>
-            <CarouselItem className="basis-1/2">
+            <CarouselItem className="md:basis-1/2">
               <ItemBlog />
             </CarouselItem>
-            <CarouselItem className="basis-1/2">
+            <CarouselItem className="md:basis-1/2">
               <ItemBlog />
             </CarouselItem>
           </CarouselContent>
-          <CarouselNext />
-          <CarouselPrevious />
-        </Carousel>
-      </div>
+          <CarouselButton />
+        </div>
+      </Carousel>
     </div>
   );
 };
