@@ -1,4 +1,5 @@
 import MainLayout from "@/layout/main-layout";
+import FormContact from "@/modules/contacts/form-contact";
 import { Metadata } from "next";
 import React from "react";
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <MainLayout headerMode="breadcrumbs" title="Contact Us">
-      <div></div>
+      <FormContact />
     </MainLayout>
   );
 };

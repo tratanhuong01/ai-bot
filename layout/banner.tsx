@@ -11,7 +11,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
     <div
       className={`bg-cover bg-center ${
         headerMode === "banner"
-          ? "banner-background h-[800px]"
+          ? "banner-background md:h-[800px]"
           : "banner-breadcrumbs h-[400px]"
       } relative`}
     >
@@ -30,22 +30,22 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
         </div>
       )}
       {headerMode === "banner" && (
-        <div className="h-[708px] container flex-row gap-3 grid">
+        <div className="py-16 md:py-0 md:h-[708px] container flex-row gap-3 grid">
           <div className="flex flex-col justify-center h-full lg:w-7/12">
             <span className="bg-[#290481] py-1 px-4 rounded-sm max-w-min whitespace-nowrap">
               Fully Dynamic
             </span>
             <div className="mt-8">
-              <h1 className="text-5xl font-bold text-white mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 <span className="text-gradient">AiNext</span> Image Creating
                 Solutions.
               </h1>
             </div>
-            <p className="text-lg text-gray-300 mb-6">
+            <p className="text-base md:text-lg text-gray-300 mb-6">
               Create production-quality visual assets for your projects with
               unprecedented quality, speed, and style-consistency..
             </p>
-            <div className="flex flex-row gap-3 items-center bg-white rounded-md p-2">
+            <div className="flex flex-row gap-3 items-center bg-white rounded-md p-1 md:p-2">
               <Input
                 className="flex-1 border-none shadow-none focus-visible:ring-0"
                 placeholder="Enter keywords, phrases, or images"
@@ -54,7 +54,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
               <span className="text-gray-700 px-4 cursor-pointer">deep ai</span>
               <Button className="h-12 w-32">Generate</Button>
             </div>
-            <div className="flex flex-row gap-3 mt-4 flex-wrap">
+            <div className="flex flex-row gap-3 mt-4 flex-wrap text-sm md:text-base items-center">
               <span>Popular tag:</span>
               <span className="bg-[#4B3A5E] py-1 px-4 rounded-sm max-w-min whitespace-nowrap">
                 Fully Dynamic

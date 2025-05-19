@@ -16,10 +16,12 @@ const ItemBenefits = ({
 }: //   link,
 ItemBenefitsProps) => {
   return (
-    <div className="flex flex-col gap-2">
-      <i className={`${icon} text-5xl`}></i>
-      <p className="text-3xl font-semibold text-white">{title}</p>
-      <p className="text-gray-400 line-clamp-3 text-justify">{description}</p>
+    <div className="flex flex-col gap-1 md:gap-2">
+      <i className={`${icon} text-3xl md:text-5xl`}></i>
+      <p className="text-xl md:text-3xl font-semibold text-white">{title}</p>
+      <p className="text-gray-400 line-clamp-3 text-sm md:text-base text-justify">
+        {description}
+      </p>
       <Link href="/" className="hover:underline">
         Read more
       </Link>

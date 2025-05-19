@@ -30,7 +30,7 @@ const benefits: ItemBenefitsProps[] = [
 
 const BenefitsProduct = () => {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 py-10">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12 py-4 md:py-10">
       {benefits.map((item) => (
         <ItemBenefits key={item.icon} {...item} />
       ))}

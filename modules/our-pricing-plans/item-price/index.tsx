@@ -23,10 +23,10 @@ const ItemPrice = ({
     >
       <div className="flex items-center gap-1">
         <CrownIcon />
-        <span className="text-3xl font-bold">{crownName}</span>
+        <span className="text-2xl md:text-3xl font-bold">{crownName}</span>
       </div>
       <p className="py-4">
-        <span className="text-7xl font-bold">${price}</span>{" "}
+        <span className="text-5xl md:text-7xl font-bold">${price}</span>{" "}
         <span className="">/ per month</span>
       </p>
       <hr

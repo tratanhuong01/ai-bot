@@ -4,7 +4,7 @@ import React from "react";
 
 const FooterContent = () => {
   return (
-    <div className="flex justify-between items-center py-3">
+    <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-center py-1 gap-4 md:gap-0 md:py-3">
       <div className="flex gap-2 items-center">
         <TagIcon size={16} />
         <span className="text-gray-400 text-sm font-semibold">

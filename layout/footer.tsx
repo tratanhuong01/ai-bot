@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-2xl font-bold">Links</p>
-          <div className="mt-6 flex flex-col gap-2">
+          <div className="mt-6 flex flex-col gap-2 text-gray-400">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/products">Products</Link>
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-2xl font-bold">Legal</p>
-          <div className="mt-6 flex flex-col gap-2">
+          <div className="mt-6 flex flex-col gap-2 text-gray-400">
             <Link href="/">Legal</Link>
             <Link href="/">Terms of Use</Link>
             <Link href="/">Terms & Condition</Link>
@@ -88,7 +88,8 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center pt-6 text-sm text-gray-400 border-t border-gray-900">
-        © Copyright | Theme Ocean | All Rights Reserved is Proudly
+        © Copyright | <span className="font-bold">Theme Ocean</span> | All
+        Rights Reserved is Proudly
       </p>
     </div>
   );

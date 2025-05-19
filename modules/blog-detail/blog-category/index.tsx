@@ -26,18 +26,18 @@ const BlogCategory = () => {
               <DotIcon />
               <span>November 6, 2023</span>
             </div>
-            <p className="text-2xl font-semibold hover:underline">
+            <p className="text-xl md:text-2xl font-semibold hover:underline">
               AI Awakenings A Journey into the Future
             </p>
           </div>
         ))}
       </div>
       <p className="text-xl font-bold mt-4">Tags</p>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-2 md:gap-4">
         {["AI", "Technology", "Innovation", "Future", "Trends"].map((tag) => (
           <span
             key={tag}
-            className="px-2 py-2 rounded-sm border border-gray-700 hover:bg-[#7f00ff] cursor-pointer"
+            className="md:p-2 p-1 rounded-sm border border-gray-700 hover:bg-[#7f00ff] cursor-pointer text-sm md:text-base"
           >
             {tag}
           </span>

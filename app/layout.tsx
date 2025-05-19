@@ -28,7 +28,17 @@ export default function RootLayout({
         <link
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
           rel="stylesheet"
-        ></link>
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

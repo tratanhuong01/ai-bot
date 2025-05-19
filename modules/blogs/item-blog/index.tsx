@@ -16,11 +16,11 @@ const ItemBlog = () => {
         />
         <div className="absolute bottom-2 left-0 px-4">
           <Link href="/blog/1">
-            <h1 className="text-3xl hover:underline transition-all duration-400">
+            <h1 className="text-xl md:text-3xl hover:underline transition-all duration-400">
               The actual history of machine intelligence
             </h1>
           </Link>
-          <p className="text-gray-300 pt-2">
+          <p className="text-gray-300 pt-2 text-sm md:text-base">
             March 18, 2223 | 5 min read | by{" "}
           </p>
         </div>

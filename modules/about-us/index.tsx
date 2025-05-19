@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="lg:flex lg:items-center gap-20 py-10 md:py-20">
+    <div className="lg:flex lg:items-center gap-20 py-4 sm:py-10 md:py-20">
       <div className="w-full lg:w-7/12 relative">
         <div style={{ paddingTop: "100%" }} />
         <Image
@@ -18,10 +18,10 @@ const AboutUs = () => {
         <span className="bg-[#290481] py-1 px-4 rounded-sm whitespace-nowrap block max-w-min text-white">
           About Us
         </span>
-        <p className="text-white font-bold text-5xl py-6">
+        <p className="text-white font-bold text-2xl md:text-5xl py-2 md:py-6">
           Create your own AI business easily.
         </p>
-        <p>
+        <p className="text-sm md:text-base text-justify">
           Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.
           Nam aliquam sem et tortor consequat. Porttitor leo a diam sollicitudin
           tempor id eu. Nisl pretium fusce id velit ut. At lectus urna duis

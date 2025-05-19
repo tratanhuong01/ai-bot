@@ -115,6 +115,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: "Karla", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
@@ -122,7 +123,7 @@
 }
 
 .container {
-  @apply lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .bg-gradient {
