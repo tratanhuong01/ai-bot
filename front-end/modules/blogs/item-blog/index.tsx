@@ -1,17 +1,17 @@
 "use client";
 
-import { Blog } from "@/interfaces/Blog";
+import { Blog } from "@/interfaces/blog.interface";
 import { getImageUrl } from "@/lib/utils";
 import { ArrowLeftIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 type ItemBlogProps = {
   blog?: Blog;
 };
 
 const ItemBlog = ({ blog }: ItemBlogProps) => {
+  const href = `/blog/${blog?.slug}`;
   return (
     <div className="overflow-hidden relative">
       <div style={{ paddingTop: "100%" }} />
@@ -23,7 +23,7 @@ const ItemBlog = ({ blog }: ItemBlogProps) => {
           fill
         />
         <div className="absolute bottom-2 left-0 px-4">
-          <Link href="/blog/1">
+          <Link href={href}>
             <h1 className="text-xl md:text-3xl hover:underline transition-all duration-400 line-clamp-2">
               {blog?.title ?? "Blog Title"}
             </h1>
@@ -33,7 +33,7 @@ const ItemBlog = ({ blog }: ItemBlogProps) => {
           </p>
         </div>
       </div>
-      <Link href="/blog/1">
+      <Link href={href}>
         <div
           className="w-24 h-24 rounded-full bg-black hover:bg-[#871CFF] absolute -top-12 -right-12 cursor-pointer pt-[56px] pl-5 
           transition-all duration-200"

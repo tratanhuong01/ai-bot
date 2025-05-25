@@ -1,12 +1,19 @@
+"use client";
+
 import React from "react";
 import BlogContent from "./blog-content";
 import BlogCategory from "./blog-category";
+import { Blog } from "@/interfaces/blog.interface";
 
-const BlogDetail = () => {
+export type BlogDetailProps = {
+  blog?: Blog;
+};
+
+const BlogDetail = ({ blog }: BlogDetailProps) => {
   return (
     <div className="lg:flex lg:flex-row gap-8 py-8 items-start">
-      <BlogContent />
-      <BlogCategory />
+      <BlogContent blog={blog} />
+      <BlogCategory blog={blog} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ import {
 import CarouselButton from "./carousel-button";
 import { useQuery } from "@tanstack/react-query";
 import { blogService } from "@/services/blog.service";
-import { Blog } from "@/interfaces/Blog";
+import { Blog } from "@/interfaces/blog.interface";
 
 const LatestBlog = () => {
   const { data } = useQuery({

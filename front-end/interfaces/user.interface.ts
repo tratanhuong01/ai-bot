@@ -8,4 +8,6 @@ export interface User {
   is_active: boolean;
   phone: string;
   title: string;
+  created_at: string; // or Date if you're using Date objects
+  updated_at: string; // or Date if you're using Date objects
 }

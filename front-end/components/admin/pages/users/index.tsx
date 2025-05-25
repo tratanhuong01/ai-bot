@@ -93,7 +93,7 @@ const Users = () => {
     {
       headerName: "Status",
       field: "is_active",
-      customColumn: (props) => <StatusColum {...props} />,
+      customColumn: StatusColum,
     },
     {
       headerName: "Created at",
@@ -116,7 +116,7 @@ const Users = () => {
       limit={5}
       onCreate={{
         modal: FormUser,
-        name: "Add new user",
+        name: "Add new member",
       }}
       onEdit={{
         modal: FormUser,

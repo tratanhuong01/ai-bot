@@ -7,7 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ReactNode, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 type ModalWarningDeleteProps = {
   handleDelete?: () => Promise<void>;
@@ -27,15 +27,13 @@ const ModalWarningDelete = ({
     mutationKey: ["DELETE_ITEM"],
     mutationFn: handleDelete,
     onSuccess: () => {
-      toast({
-        title: `Delete rows was successful!`,
+      toast("Delete rows was successful!", {
         description: `The rows has been removed successfully.`,
       });
       setOpen(false);
     },
     onError: () => {
-      toast({
-        title: "Delete rows failed!",
+      toast("Delete rows failed!", {
         description:
           "An error occurred while attempting to delete the rows. Please try again.",
       });

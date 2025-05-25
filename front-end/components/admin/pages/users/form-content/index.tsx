@@ -4,18 +4,13 @@ import { FormField } from "@/components/shared/form-field";
 import { FormGroup } from "@/components/shared/form-group";
 import ImageContainer from "@/components/shared/image";
 import { Button } from "@/components/ui/button";
-import { Combobox } from "@/components/ui/combobox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { locationService } from "@/services/location.service";
+import { cn } from "@/lib/utils";
 import { UploadIcon } from "lucide-react";
-import React from "react";
 import { useFormContext } from "react-hook-form";
-import { v4 } from "uuid";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { cn } from "@/lib/utils";
-
 type FormContentProps = {
   isLoading?: boolean;
   id: string;
@@ -37,21 +32,7 @@ const FormContent = ({
     clearErrors,
   } = useFormContext();
   const avatarUrl = watch("avatar");
-  const address = watch("address");
   const phone = watch("phone");
-  const onLoadOptions = async (name: string) => {
-    const result = await locationService.fetchByQuery(name);
-    return result?.features.map((item: any) => ({
-      id: v4(),
-      label: item?.properties?.display_name,
-      value: item?.properties?.display_name,
-      item: {
-        display_name: item?.properties?.display_name,
-        locations: item?.geometry?.coordinates,
-      },
-    }));
-  };
-
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-center">
@@ -114,15 +95,6 @@ const FormContent = ({
       <FormGroup name="email" label="Email">
         <FormField>
           <Input placeholder="Email" />
-        </FormField>
-      </FormGroup>
-      <FormGroup name="address" label="Locations">
-        <FormField>
-          <Combobox<any>
-            placeholder={address ? address?.display_name : "Search location"}
-            onLoadOptions={onLoadOptions}
-            onValueChange={(data) => setValue("address", data)}
-          />
         </FormField>
       </FormGroup>
       <FormGroup name="password" label="Password">

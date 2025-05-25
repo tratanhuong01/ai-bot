@@ -5,11 +5,11 @@ interface SidebarItem {
 }
 
 const sidebars: SidebarItem[] = [
-  {
-    name: "Cars",
-    icon: "bx bx-notepad",
-    path: "/cars",
-  },
+  // {
+  //   name: "Cars",
+  //   icon: "bx bx-notepad",
+  //   path: "/cars",
+  // },
   {
     name: "Categories",
     icon: "bx bx-category",
@@ -21,15 +21,15 @@ const sidebars: SidebarItem[] = [
     path: "/blogs",
   },
   {
-    name: "Users",
+    name: "Teams",
     icon: "bx bx-user",
     path: "/users",
   },
-  {
-    name: "Booking car",
-    icon: "bx bx-book",
-    path: "/booking",
-  },
+  // {
+  //   name: "Booking car",
+  //   icon: "bx bx-book",
+  //   path: "/booking",
+  // },
 ];
 
 export default sidebars;

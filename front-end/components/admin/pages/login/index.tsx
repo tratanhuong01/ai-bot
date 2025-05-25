@@ -2,13 +2,13 @@
 
 import FormLogin from "./form-login";
 import { useMutation } from "@tanstack/react-query";
-import { toast } from "@/hooks/use-toast";
 import { Form } from "@/components/shared/form";
 import { ADMIN_SESSION, userService } from "@/services/user.service";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import schema from "./schema";
+import { toast } from "sonner";
 
 const Login = () => {
   const router = useRouter();
@@ -19,17 +19,14 @@ const Login = () => {
       return result;
     },
     onSuccess: (data) => {
-      toast({
-        title: "Login Successful",
+      toast("Login Successful", {
         description: "You have successfully logged into the system.",
       });
       Cookies.set(ADMIN_SESSION, JSON.stringify(data.access_token));
       router.push("/admin/cars");
     },
     onError: () => {
-      toast({
-        variant: "destructive",
-        title: "Login Failed",
+      toast("Login Failed", {
         description: "Please check your username and password.",
       });
     },

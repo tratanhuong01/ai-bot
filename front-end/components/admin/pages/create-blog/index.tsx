@@ -11,7 +11,7 @@ import { schema } from "./schema";
 import FormCreateBlog from "./form-create-blog";
 import { CreateBlogContext } from "@/contexts/CreateBlogContext";
 import { blogService } from "@/services/blog.service";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 const CreateBlog = () => {
   const {
@@ -55,15 +55,10 @@ const CreateBlog = () => {
       return output;
     },
     onSuccess: () => {
-      toast({
-        title: `${id ? "Updated" : "Created"} successfully.`,
-      });
+      toast(`${id ? "Updated" : "Created"} successfully.`);
     },
     onError: () => {
-      toast({
-        variant: "destructive",
-        title: "Duplicate slug or name.",
-      });
+      toast("Duplicate slug or name.");
     },
   });
 

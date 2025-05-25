@@ -4,13 +4,15 @@ import Author from "../author";
 import FooterContent from "../footer-content";
 import ItemComment from "../item-comment";
 import FormComment from "../form-comment";
+import { BlogDetailProps } from "..";
+import { getImageUrl } from "@/lib/utils";
 
-const BlogContent = () => {
+const BlogContent = ({ blog }: BlogDetailProps) => {
   return (
     <div className="lg:w-2/3">
       <div className="w-full relative h-[500px] flex flex-col">
         <Image
-          src="/images/member1.jpg"
+          src={getImageUrl(blog?.thumbnail ?? "/images/team.jpg")}
           alt="blog detail"
           fill
           className="object-cover"

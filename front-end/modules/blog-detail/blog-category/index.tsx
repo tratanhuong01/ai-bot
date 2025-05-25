@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DotIcon, SearchIcon } from "lucide-react";
 import React from "react";
+import { BlogDetailProps } from "..";
 
-const BlogCategory = () => {
+const BlogCategory = ({ blog }: BlogDetailProps) => {
   return (
     <div className="bg-[#111618] p-5 lg:w-1/3 flex flex-col gap-4">
       <p className="text-xl font-bold">Search</p>

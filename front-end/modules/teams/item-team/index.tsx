@@ -1,4 +1,4 @@
-import { User } from "@/interfaces/User";
+import { User } from "@/interfaces/user.interface";
 import { getImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";

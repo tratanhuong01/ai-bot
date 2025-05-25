@@ -45,6 +45,6 @@ app.use(
 
 app.set("view engine", "ejs");
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Server running on http://localhost:${port}`);
 });

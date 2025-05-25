@@ -11,9 +11,9 @@ import { categoryService } from "@/services/category.service";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { ReactNode } from "react";
 import FormContent from "../form-content";
-import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "../schema";
+import { toast } from "sonner";
 
 type FormCategoryProps = {
   children?: ReactNode;
@@ -39,15 +39,10 @@ const FormCategory = ({
     onSuccess: () => {
       setOpen(false);
       callback?.();
-      toast({
-        title: `${id ? "Edit" : "Create"} category successfully`,
-      });
+      toast(`${id ? "Edit" : "Create"} category successfully`);
     },
     onError: () => {
-      toast({
-        variant: "destructive",
-        title: `Duplicate name.`,
-      });
+      toast(`Duplicate name.`);
     },
   });
   const { data } = useQuery({

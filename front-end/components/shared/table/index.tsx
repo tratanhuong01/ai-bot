@@ -120,7 +120,7 @@ const DataTable = <T,>(props: DataTableProps<T>) => {
   useEffect(() => {
     if (!props.loadFilter) refetch();
   }, [offset, limit, filters, props.loadFilter]);
-  const Comp = props.onCreate?.modal || Temp;
+  const Comp = props.onCreate?.modal ?? Temp;
   const eventEmitter = useEventEmitter(props.event_key ?? "");
 
   const handleChange = useCallback(

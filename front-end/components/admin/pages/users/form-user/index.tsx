@@ -11,9 +11,9 @@ import { userService } from "@/services/user.service";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { ReactNode, useState } from "react";
 import FormContent from "../form-content";
-import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "../schema";
+import { toast } from "sonner";
 
 type FormUserProps = {
   children?: ReactNode;
@@ -42,15 +42,12 @@ const FormUser = ({ children, id, open, setOpen, callback }: FormUserProps) => {
     onSuccess: () => {
       setOpen(false);
       callback?.();
-      toast({
-        title: "Success",
+      toast("Success", {
         description: `User ${id ? "updated" : "created"} successfully.`,
       });
     },
     onError: () => {
-      toast({
-        variant: "destructive",
-        title: "Failed",
+      toast("Failed", {
         description: "Duplicate email or phone. Please try other email.",
       });
     },

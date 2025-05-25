@@ -7,12 +7,14 @@ import React from "react";
 
 const FormContact = () => {
   return (
-    <div className="flex flex-col lg:flex-row gap-16 py-32">
+    <div className="flex flex-col lg:flex-row gap-8 py-16 lg:gap-16 lg:py-32">
       <div className="lg:w-1/2 flex flex-col gap-2">
         <span className="bg-[#290481] py-1 px-4 rounded-sm whitespace-nowrap block max-w-min text-white">
           Contact
         </span>
-        <p className="text-6xl font-bold">Join Our Network</p>
+        <p className="text-3xl md:text-4xl lg:text-6xl font-bold">
+          Join Our Network
+        </p>
         <p className="text-gray-400">
           We'd love to have you! Join our 100% remote network of creators &
           freelancers.
