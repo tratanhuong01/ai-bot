@@ -1,0 +1,49 @@
+"use client";
+
+import FormLogin from "./form-login";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "@/hooks/use-toast";
+import { Form } from "@/components/shared/form";
+import { ADMIN_SESSION, userService } from "@/services/user.service";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import schema from "./schema";
+
+const Login = () => {
+  const router = useRouter();
+  const mutation = useMutation({
+    mutationKey: ["LOGIN"],
+    mutationFn: async (data: any) => {
+      const result = await userService.login(data);
+      return result;
+    },
+    onSuccess: (data) => {
+      toast({
+        title: "Login Successful",
+        description: "You have successfully logged into the system.",
+      });
+      Cookies.set(ADMIN_SESSION, JSON.stringify(data.access_token));
+      router.push("/admin/cars");
+    },
+    onError: () => {
+      toast({
+        variant: "destructive",
+        title: "Login Failed",
+        description: "Please check your username and password.",
+      });
+    },
+  });
+  //
+  return (
+    <div className="w-full h-screen flex items-center justify-center">
+      <Form onSubmit={mutation.mutate} zodResolver={zodResolver(schema)}>
+        <div className="flex-col flex justify-center w-80 gap-5 mx-auto">
+          <FormLogin loading={mutation.isPending} />
+        </div>
+      </Form>
+    </div>
+  );
+};
+
+export default Login;

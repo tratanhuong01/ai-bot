@@ -1,0 +1,43 @@
+{
+  "name": "api-rental-car",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@hookform/resolvers": "^4.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/md5": "^2.3.5",
+    "@types/multer": "^1.4.12",
+    "@types/pg": "^8.11.11",
+    "@types/response-time": "^2.3.8",
+    "body-parser": "^1.20.3",
+    "cheerio": "^1.0.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "md5": "^2.3.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.10",
+    "objection": "^3.1.5",
+    "pg": "^8.13.3",
+    "postgres": "^3.4.5",
+    "response-time": "^2.3.3",
+    "sharp": "^0.33.5",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/config/server.ts"
+  }
+}
