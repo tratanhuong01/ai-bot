@@ -35,25 +35,35 @@ const buttonVariants = cva(
   }
 );
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
-  const Comp = asChild ? Slot : "button";
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
 
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  ButtonProps & { ping?: boolean }
+>(({ className, variant, size, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : "button";
+  const { ping } = props;
+  delete props.ping;
   return (
     <Comp
-      data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
       {...props}
-    />
+    >
+      {ping && (
+        <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+        </span>
+      )}
+      {props.children}
+    </Comp>
   );
-}
+});
+Button.displayName = "Button";
 
 export { Button, buttonVariants };
