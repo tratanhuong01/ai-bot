@@ -43,7 +43,7 @@ const FormContact = () => {
             </FormGroup>
             <FormGroup name="email" label="" standard>
               <FormField>
-                <input
+                <Input
                   className="focus-visible:ring-0 border-t-0 border-r-0 border-l-0 border-b-2 border-gray-400 focus:border-[#290481] w-full py-6 px-4"
                   type="text"
                   placeholder="Email address"

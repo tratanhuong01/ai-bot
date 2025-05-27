@@ -11,6 +11,7 @@ import CreateBlog from "@/components/admin/pages/create-blog";
 export type CreateBlogState = {
   thumbnailNew?: File;
   thumbnailOld?: string;
+  tags?: string[];
 };
 
 const init: CreateBlogState = {};

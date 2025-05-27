@@ -11,12 +11,14 @@ import { generateSlug } from "@/utils";
 import { SelectField } from "@/components/shared/select";
 import { useQuery } from "@tanstack/react-query";
 import { categoryService } from "@/services/category.service";
+import ModalTags from "@/app/(admin)/admin/blogs/tags";
 
 const FormCreateBlog = () => {
   const { setValue, watch } = useFormContext();
   const description = watch("description");
   const content = watch("content");
   const title = watch("title");
+  const tags = watch("tags");
   useEffect(() => {
     setValue("slug", generateSlug(title));
   }, [title]);
@@ -56,6 +58,23 @@ const FormCreateBlog = () => {
               className="flex-1"
               label="Description"
             />
+          </div>
+          <div className="flex flex-col gap-4">
+            <label htmlFor="" className="text-sm font-semibold text-gray-700">
+              {" "}
+              Tags:
+            </label>
+            <div className="flex gap-3 items-center flex-wrap">
+              <div className="flex gap-2 items-center flex-wrap">
+                {!!tags?.length && (
+                  <span className="py-1 px-2 text-primary font-bold">
+                    {tags?.length} tags
+                  </span>
+                )}
+              </div>
+
+              <ModalTags />
+            </div>
           </div>
         </div>
         <div className="w-1/2 flex flex-col gap-4">
