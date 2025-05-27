@@ -3,15 +3,30 @@
 import { Blog } from "@/interfaces/blog.interface";
 import { getImageUrl } from "@/lib/utils";
 import { ArrowLeftIcon } from "lucide-react";
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
 type ItemBlogProps = {
   blog?: Blog;
+  isLoading?: boolean;
 };
 
-const ItemBlog = ({ blog }: ItemBlogProps) => {
+const ItemBlog = ({ blog, isLoading = false }: ItemBlogProps) => {
   const href = `/blog/${blog?.slug}`;
+  if (isLoading) {
+    return (
+      <div className="overflow-hidden relative animate-pulse bg-slate-700 rounded-sm">
+        <div style={{ paddingTop: "100%" }} />
+        <div className="absolute top-0 left-0 bottom-0 right-0">
+          <div className="absolute bottom-2 left-0 px-4 w-full">
+            <div className="tline-clamp-1 h-4 bg-slate-800 w-full animae-pulse rounded-sm" />
+            <div className="line-clamp-1 h-4 w-1/2 bg-slate-800 mt-2 mb-4 animate-pulse rounded-sm" />
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="overflow-hidden relative">
       <div style={{ paddingTop: "100%" }} />
@@ -19,7 +34,7 @@ const ItemBlog = ({ blog }: ItemBlogProps) => {
         <Image
           src={getImageUrl(blog?.thumbnail ?? "/images/team.jpg")}
           alt="team"
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover rounded-lg opacity-70 hover:opacity-100 transition-all duration-300"
           fill
         />
         <div className="absolute bottom-2 left-0 px-4">
@@ -29,7 +44,7 @@ const ItemBlog = ({ blog }: ItemBlogProps) => {
             </h1>
           </Link>
           <p className="text-gray-300 pt-2 text-sm md:text-base">
-            March 18, 2223 | 5 min read | by{" "}
+            {moment(blog?.created_at).format("MMMM D, YYYY")}
           </p>
         </div>
       </div>

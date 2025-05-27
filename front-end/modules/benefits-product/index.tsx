@@ -6,25 +6,25 @@ const benefits: ItemBenefitsProps[] = [
     icon: "bx bx-user",
     title: "User Friendly",
     description:
-      " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Designed with simplicity in mind, our interface is intuitive and easy to navigate for users of all experience levels.",
   },
   {
     icon: "bx bx-shield",
     title: "Security",
     description:
-      " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Your data is protected with industry-leading security measures, ensuring privacy and peace of mind at every step.",
   },
   {
     icon: "bx bx-bulb",
     title: "Easy to Use",
     description:
-      " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "No complex setup or training required — get started quickly and accomplish tasks efficiently with our streamlined system.",
   },
   {
     icon: "bx bx-support",
     title: "24/7 Support",
     description:
-      " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Our dedicated support team is available around the clock to assist you whenever you need help, no matter the time zone.",
   },
 ];
 

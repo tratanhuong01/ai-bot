@@ -6,6 +6,9 @@ export interface Blog {
   created_at: string;
   updated_at: string;
   slug: string;
+  content: string;
+  descripion: string;
+  tags: string[];
 }
 
 export interface BlogCreatePayload {

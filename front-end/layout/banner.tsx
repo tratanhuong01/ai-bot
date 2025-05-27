@@ -47,7 +47,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
             </p>
             <div className="flex flex-row gap-3 items-center bg-white rounded-md p-1 md:p-2">
               <Input
-                className="flex-1 border-none shadow-none focus-visible:ring-0"
+                className="flex-1 border-none shadow-none focus-visible:ring-0 text-black"
                 placeholder="Enter keywords, phrases, or images"
               />
               <span className="text-gray-700">|</span>

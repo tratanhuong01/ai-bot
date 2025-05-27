@@ -15,7 +15,7 @@ import { blogService } from "@/services/blog.service";
 import { Blog } from "@/interfaces/blog.interface";
 
 const LatestBlog = () => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["latest-blog"],
     queryFn: async () => {
       return await blogService.search({
@@ -50,13 +50,19 @@ const LatestBlog = () => {
         <Carousel>
           <div className="w-full">
             <CarouselContent>
-              {data?.data?.map((blog: Blog) => (
-                <CarouselItem key={blog.id} className="md:basis-1/2">
-                  <ItemBlog blog={blog} />
-                </CarouselItem>
-              ))}
+              {isLoading
+                ? [1, 2].map((item) => (
+                    <CarouselItem key={item} className="md:basis-1/2">
+                      <ItemBlog isLoading />
+                    </CarouselItem>
+                  ))
+                : data?.data?.map((blog: Blog) => (
+                    <CarouselItem key={blog.id} className="md:basis-1/2">
+                      <ItemBlog blog={blog} />
+                    </CarouselItem>
+                  ))}
             </CarouselContent>
-            <CarouselButton />
+            {!isLoading && <CarouselButton />}
           </div>
         </Carousel>
       </div>

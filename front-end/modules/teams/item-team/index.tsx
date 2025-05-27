@@ -6,9 +6,30 @@ import React from "react";
 
 type ItemTeamProps = {
   member?: User;
+  isLoading?: boolean;
 };
 
-const ItemTeam = ({ member }: ItemTeamProps) => {
+const ItemTeam = ({ member, isLoading }: ItemTeamProps) => {
+  if (isLoading) {
+    return (
+      <div className="relative overflow-hidden rounded-sm cursor-pointer bg-slate-700 animate-pulse">
+        <div style={{ paddingTop: "100%" }}>
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col gap-2 w-11/12">
+            <div className="tline-clamp-1 h-2 bg-slate-800 w-full animae-pulse rounded-sm" />
+            <div className="tline-clamp-1 h-2 bg-slate-800 w-full animae-pulse rounded-sm" />
+            <div className="flex flex-row gap-2">
+              {[1, 2, 3].map((item) => (
+                <div
+                  key={item}
+                  className="w-5 h-5 bg-slate-800 animate-pulse rounded-sm flex justify-center items-center"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="relative overflow-hidden rounded-sm cursor-pointer">
       <div style={{ paddingTop: "100%" }}>

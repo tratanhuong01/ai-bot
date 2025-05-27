@@ -16,6 +16,7 @@ export type FilterCommon = {
     field: string;
     isASC: boolean;
   };
+  exclude?: string[];
 };
 
 export type ResponseEntity<T> = {

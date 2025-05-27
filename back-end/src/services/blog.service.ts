@@ -31,6 +31,9 @@ export class BlogService {
           );
         });
       }
+      if (filters.exclude && filters?.exclude.length > 0) {
+        query.whereNotIn("id", filters.exclude);
+      }
       const total = await query;
       if (filters.pagable) {
         query.offset(filters.pagable.offset);

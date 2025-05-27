@@ -19,13 +19,12 @@ const AboutUs = () => {
           About Us
         </span>
         <p className="text-white font-bold text-2xl md:text-5xl py-2 md:py-6">
-          Create your own AI business easily.
+          Who We Are – Empowering the Tech-Driven Future
         </p>
         <p className="text-sm md:text-base text-justify">
-          Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.
-          Nam aliquam sem et tortor consequat. Porttitor leo a diam sollicitudin
-          tempor id eu. Nisl pretium fusce id velit ut. At lectus urna duis
-          convallis convallis tellus id interdum.
+          nded by developers and creators, we aim to build a community where
+          technology is not just news—but a powerful tool to learn, grow, and
+          innovate. Join us on our journey to decode the future.
         </p>
         <ul className="flex justify-between items-center py-10">
           <li className="text-white">

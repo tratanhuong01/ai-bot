@@ -20,6 +20,7 @@ type PaginationProps = {
   onPageChange: (page: number) => void;
   canPreviousPage: boolean;
   canNextPage: boolean;
+  isDark?: boolean;
 };
 
 const TablePagination = ({
@@ -28,6 +29,7 @@ const TablePagination = ({
   onPageChange,
   canPreviousPage,
   canNextPage,
+  isDark = false,
 }: PaginationProps) => {
   const hideLeftEllipsis = pagination.pageIndex < 4 || totalPages <= 5;
   const hideRightEllipsis =
@@ -88,7 +90,11 @@ const TablePagination = ({
           <PaginationItem key={item}>
             {
               <PaginationLink
-                className="cursor-pointer"
+                className={`cursor-pointer ${
+                  isDark && pagination.pageIndex + 1 === item
+                    ? "text-black"
+                    : ""
+                }`}
                 isActive={pagination.pageIndex + 1 === item}
                 onClick={() => onPageChange(item - 1)}
               >

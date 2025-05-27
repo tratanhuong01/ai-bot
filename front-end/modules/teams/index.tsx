@@ -12,7 +12,7 @@ import { useQuery } from "@tanstack/react-query";
 import { userService } from "@/services/user.service";
 
 const Teams = () => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["teams"],
     queryFn: async () => {
       return await userService.search({
@@ -30,16 +30,25 @@ const Teams = () => {
       <Carousel>
         <div className="relative">
           <CarouselContent>
-            {data?.data?.map((item: any) => (
-              <CarouselItem
-                key={item.id}
-                className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
-              >
-                <ItemTeam member={item} />
-              </CarouselItem>
-            ))}
+            {isLoading
+              ? [1, 2, 3, 4].map((item) => (
+                  <CarouselItem
+                    key={item}
+                    className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  >
+                    <ItemTeam isLoading />
+                  </CarouselItem>
+                ))
+              : data?.data?.map((item: any) => (
+                  <CarouselItem
+                    key={item.id}
+                    className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  >
+                    <ItemTeam member={item} />
+                  </CarouselItem>
+                ))}
           </CarouselContent>
-          <CarouselButton />
+          {!isLoading && <CarouselButton />}
         </div>
       </Carousel>
     </div>

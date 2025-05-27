@@ -6,6 +6,7 @@ import blogRouter from "../routes/blog.route";
 import bodyParser from "body-parser";
 import categoryRouter from "../routes/category.route";
 import responseTime from "response-time";
+import commentRouter from "../routes/comment.route";
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ function loggerMiddleware(
 }
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ?? 5000;
 
 app.use(cors());
 app.use(bodyParser.json({ limit: 1024 * 1024 * 50 }));
@@ -28,6 +29,7 @@ app.use(responseTime());
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/blogs", blogRouter);
 app.use("/api/v1/categories", categoryRouter);
+app.use("/api/v1/comments", commentRouter);
 
 app.use("/uploads", express.static("uploads"));
 app.use(

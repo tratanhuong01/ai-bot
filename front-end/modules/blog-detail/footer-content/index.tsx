@@ -1,16 +1,32 @@
+import { Blog } from "@/interfaces/blog.interface";
 import { TagIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const FooterContent = () => {
+type FooterContentProps = {
+  blog?: Blog;
+};
+
+const FooterContent = ({ blog }: FooterContentProps) => {
   return (
     <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-center py-1 gap-4 md:gap-0 md:py-3">
-      <div className="flex gap-2 items-center">
-        <TagIcon size={16} />
-        <span className="text-gray-400 text-sm font-semibold">
-          {["Design", "Development", "Marketing"].join(", ")}
-        </span>
-      </div>
+      {blog?.tags && blog.tags.length > 0 ? (
+        <div className="flex items-center gap-2">
+          <span className="font-bold">Tags:</span>
+          {blog.tags.map((tag) => (
+            <Link
+              key={tag}
+              href={`/blogs?tag=${tag}`}
+              className="text-blue-500 hover:underline"
+            >
+              <TagIcon className="inline-block mr-1" />
+              {tag}
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div></div>
+      )}
       <div className="flex items-center gap-2">
         <span className="font-bold">Share:</span>
         <Link
