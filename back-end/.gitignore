@@ -14,7 +14,7 @@
 /coverage
 
 # resources
-# /resources
+/resources
 
 /back-end/dist
 
