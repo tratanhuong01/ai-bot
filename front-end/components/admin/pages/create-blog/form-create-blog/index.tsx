@@ -14,7 +14,15 @@ import { categoryService } from "@/services/category.service";
 import ModalTags from "@/app/(admin)/admin/blogs/tags";
 
 const FormCreateBlog = () => {
-  const { setValue, watch } = useFormContext();
+  const {
+    setValue,
+    watch,
+    formState: { errors },
+    getValues,
+  } = useFormContext();
+  console.log(errors);
+  console.log(getValues());
+
   const description = watch("description");
   const content = watch("content");
   const title = watch("title");

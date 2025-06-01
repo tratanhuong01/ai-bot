@@ -14,6 +14,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string("thumbnail").nullable();
     table.text("content").nullable();
     table.string("slug").notNullable().unique();
+    table.jsonb("tags").notNullable().unique();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.timestamp("updated_at").defaultTo(knex.fn.now()).nullable();
   });

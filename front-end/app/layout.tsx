@@ -4,6 +4,7 @@ import "./globals.css";
 import Container from "@/layout/container";
 import ScrollTop from "@/components/shared/scroll-top";
 import { Toaster } from "@/components/ui/sonner";
+import "@/global/global-setup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,12 +45,15 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
         suppressHydrationWarning
       >
-        <Container>{children}</Container>
-        <ScrollTop />
+        <div id="root" className="w-full overflow-auto h-screen">
+          <Container>{children}</Container>
+          <ScrollTop />
+        </div>
         <Toaster />
+        <div id="portal-loading"></div>
       </body>
     </html>
   );

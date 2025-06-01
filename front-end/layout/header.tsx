@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRightIcon, MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 const Header = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -59,7 +61,11 @@ const Header = () => {
           </Link>
         </nav>
         <div className="flex space-x-4">
-          <Button>
+          <Button
+            onClick={() => {
+              router.push("/get-started");
+            }}
+          >
             <span>Get started</span>
             <ChevronRightIcon />
           </Button>

@@ -42,12 +42,13 @@ const DialogContent = React.forwardRef<
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
-          "fixed z-50 w-full max-w-lg gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg" +
-            ` ${
-              props.isPanel
-                ? "right-0 top-0 h-screen !rounded-none flex flex-col data-[state=closed]:slide-out-to-right-0 data-[state=closed]:slide-out-to-top-0 data-[state=open]:slide-in-from-left-0 data-[state=open]:slide-in-from-top-0"
-                : "left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] grid data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]"
-            }`,
+          "rounded-sm",
+          "fixed z-50 w-full max-w-lg gap-4 border bg-background p-6 shadow-lg duration-200",
+          "data-[state=open]:animate-fade-in-0 data-[state=closed]:animate-fade-out-0",
+          "data-[state=open]:animate-zoom-in-95 data-[state=closed]:animate-zoom-out-95",
+          props.isPanel
+            ? "right-0 top-0 h-screen !rounded-none flex flex-col data-[state=open]:animate-slide-in-from-left data-[state=closed]:animate-slide-out-to-right"
+            : "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid",
           className
         )}
         {...temp}

@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import Sidebar from "./sidebar";
 import Header from "./header";
 import { usePathname } from "next/navigation";
+import "@/global/global-setup";
 
 type AdminWrapperProps = {
   children?: ReactNode;

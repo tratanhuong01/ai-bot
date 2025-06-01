@@ -1,17 +1,18 @@
 "use client";
 
 import { Form } from "@/components/shared/form";
-import React, { Suspense, useContext, useEffect } from "react";
+import Loading from "@/components/shared/loading";
 import { Button } from "@/components/ui/button";
+import { CreateBlogContext } from "@/contexts/CreateBlogContext";
+import { blogService } from "@/services/blog.service";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
-import Loading from "@/components/shared/loading";
-import { schema } from "./schema";
-import FormCreateBlog from "./form-create-blog";
-import { CreateBlogContext } from "@/contexts/CreateBlogContext";
-import { blogService } from "@/services/blog.service";
+import { Suspense, useContext, useEffect } from "react";
 import { toast } from "sonner";
+import { v4 } from "uuid";
+import FormCreateBlog from "./form-create-blog";
+import { schema } from "./schema";
 
 const CreateBlog = () => {
   const {
@@ -29,11 +30,21 @@ const CreateBlog = () => {
       const result = await blogService.getById("id", id);
       return result?.data ?? null;
     },
+    refetchOnWindowFocus: false,
   });
   const { mutate, isPending } = useMutation({
     mutationKey: ["create-blog"],
     mutationFn: async (form: any) => {
+      $$.loading(true);
       const formData = new FormData();
+      delete form.tags_temp;
+      formData.append(
+        "tags",
+        JSON.stringify(
+          form.tags?.length ? form.tags?.map((item: any) => item.value) : null
+        )
+      );
+      delete form.tags;
       formData.append(
         "blog",
         JSON.stringify(
@@ -50,14 +61,15 @@ const CreateBlog = () => {
       const output = id
         ? await blogService.update(formData)
         : await blogService.create(formData);
-
-      router.push("/admin/blogs");
       return output;
     },
     onSuccess: () => {
+      $$.loading(false);
+      router.push("/admin/blogs");
       toast(`${id ? "Updated" : "Created"} successfully.`);
     },
     onError: () => {
+      $$.loading(false);
       toast("Duplicate slug or name.");
     },
   });
@@ -74,7 +86,23 @@ const CreateBlog = () => {
         <Form
           onSubmit={mutate}
           zodResolver={zodResolver(schema)}
-          defaultValues={data ? { ...data, owner: data.user } : {}}
+          defaultValues={
+            data
+              ? {
+                  ...data,
+                  tags_temp:
+                    data?.tags?.map((item: any) => ({
+                      id: v4(),
+                      value: item,
+                    })) ?? [],
+                  tags:
+                    data?.tags?.map((item: any) => ({
+                      id: v4(),
+                      value: item,
+                    })) ?? [],
+                }
+              : {}
+          }
         >
           <div className="flex justify-between">
             <p className="font-bold text-2xl">{id ? "Edit" : "Create"} blog</p>
@@ -86,7 +114,7 @@ const CreateBlog = () => {
               >
                 Cancel
               </Button>
-              <Button type="submit" disabled={isPending}>
+              <Button className="bg-primary" type="submit" disabled={isPending}>
                 Save and submit
               </Button>
             </div>

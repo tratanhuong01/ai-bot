@@ -35,7 +35,6 @@ const ItemFilter = <T,>({
         [item.field]: checked,
       });
     }
-
   }, [checked]);
   //
   return (
@@ -172,6 +171,7 @@ const ModalFilters = <T,>({ filters, onLoadFilter }: ModalFiltersProps<T>) => {
               dispatch(updateData("queries", { ...queries, filters: temp }));
               setOpen(false);
             }}
+            className="bg-primary"
           >
             Confirm
           </Button>

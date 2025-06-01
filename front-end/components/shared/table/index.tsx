@@ -170,7 +170,7 @@ const DataTable = <T,>(props: DataTableProps<T>) => {
                 <Button
                   type="button"
                   onClick={() => router.push(props.onCreate?.link ?? "")}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 bg-primary"
                   disabled={props.onCreate?.disabled}
                 >
                   {props.onCreate.Icon ?? <PlusIcon />}
@@ -180,7 +180,7 @@ const DataTable = <T,>(props: DataTableProps<T>) => {
                 <Button
                   onClick={() => setOpen(true)}
                   type="button"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 bg-primary"
                 >
                   {props.onCreate.Icon ?? <PlusIcon />}
                   <span>{props.onCreate.name ?? "Create"}</span>

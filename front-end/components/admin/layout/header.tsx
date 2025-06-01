@@ -22,8 +22,10 @@ const Header = () => {
       <span
         aria-hidden
         onClick={async () => {
+          $$.loading(true);
           jscookie.remove(ADMIN_SESSION);
           router.push("/admin/login");
+          $$.loading(false);
         }}
         className="text-primary text-sm font-bold underline cursor-pointer"
       >

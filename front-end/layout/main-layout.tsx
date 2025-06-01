@@ -3,6 +3,7 @@
 import { HeaderModeType } from "@/types/common";
 import React from "react";
 import Banner from "./banner";
+import "@/global/global-setup";
 
 type MainLayoutProps = {
   children: React.ReactNode;

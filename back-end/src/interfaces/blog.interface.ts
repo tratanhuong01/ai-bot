@@ -7,6 +7,7 @@ export interface Blog {
   slug: string;
   created_at: Date;
   updated_at: Date;
+  tags: string[] | null;
 }
 
 export type BlogCreatePayLoad = {
@@ -18,6 +19,7 @@ export type BlogCreatePayLoad = {
     content: string;
     thumbnail: string;
   };
+  tags: string[] | null;
 };
 
 export type BlogUpdatePayLoad = {
@@ -30,5 +32,6 @@ export type BlogUpdatePayLoad = {
     thumbnail: string;
     slug: string;
   };
+  tags: string[] | null;
   thumbnailOld: string;
 };

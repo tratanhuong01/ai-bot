@@ -58,6 +58,7 @@ const ModalWarningDelete = ({
           </Button>
           <Button
             type="button"
+            className="bg-primary"
             onClick={() => !mutation.isPending && mutation.mutate()}
             disabled={mutation.isPending}
           >

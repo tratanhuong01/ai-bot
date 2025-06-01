@@ -14,7 +14,9 @@
 /coverage
 
 # resources
-/resources
+# /resources
+
+/back-end/dist
 
 # next.js
 /.next/

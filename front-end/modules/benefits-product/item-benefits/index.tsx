@@ -1,6 +1,9 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip";
+import useComingSoon from "@/hooks/use-coming-soon";
 import { TooltipTrigger } from "@radix-ui/react-tooltip";
-import Link from "next/link";
 import React from "react";
 
 export type ItemBenefitsProps = {
@@ -15,6 +18,7 @@ const ItemBenefits = ({
   description,
 }: //   link,
 ItemBenefitsProps) => {
+  const { comingSoonContent, handleComingSoon } = useComingSoon(true);
   return (
     <div className="flex flex-col gap-1 md:gap-2">
       <i className={`${icon} text-3xl md:text-5xl`}></i>
@@ -29,9 +33,14 @@ ItemBenefitsProps) => {
           <p>{description}</p>
         </TooltipContent>
       </Tooltip>
-      <Link href="/" className="hover:underline">
+      <Button
+        variant="ghost"
+        onClick={handleComingSoon}
+        className="hover:underline mt-1"
+      >
         Read more
-      </Link>
+      </Button>
+      {comingSoonContent}
     </div>
   );
 };

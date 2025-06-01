@@ -6,29 +6,29 @@ export async function seed(knex: Knex): Promise<void> {
 
   const categories = [
     {
-      id: "3349af3a-0e95-434a-a377-60775824d3c8",
-      name: "Car Rental Tips",
-      slug: "car-rental-tips",
+      id: "1a2b3c4d-1111-aaaa-bbbb-ccccdddd0001",
+      name: "AI News & Trends",
+      slug: "ai-news-trends",
     },
     {
-      id: "426ffe98-b47a-4cde-9424-6c3a7a8e70a1",
-      name: "Traffic Laws & Car Insurance",
-      slug: "traffic-laws-car-insurance",
+      id: "1a2b3c4d-2222-bbbb-cccc-ddddeeee0002",
+      name: "Machine Learning Applications",
+      slug: "machine-learning-applications",
     },
     {
-      id: "74c6938d-624b-4335-bf93-55f1f05fafbd",
-      name: "Car Technology & Trends",
-      slug: "car-technology-trends",
+      id: "1a2b3c4d-3333-cccc-dddd-eeeeffff0003",
+      name: "Tech Innovations",
+      slug: "tech-innovations",
     },
     {
-      id: "b7d5b76d-dcc2-4baa-9898-2a25062e0413",
-      name: "User Stories & Experiences",
-      slug: "user-stories-experiences",
+      id: "1a2b3c4d-4444-dddd-eeee-ffff00001111",
+      name: "AI in Everyday Life",
+      slug: "ai-in-everyday-life",
     },
     {
-      id: "fc5f9819-c72a-4296-8781-739326a68318",
-      name: "Road Trips & Travel",
-      slug: "road-trips-travel",
+      id: "1a2b3c4d-5555-eeee-ffff-000011112222",
+      name: "Future of Technology",
+      slug: "future-of-technology",
     },
   ];
 

@@ -34,6 +34,9 @@ const RecentBlog = ({ blog }: RecentBlogProps) => {
           : data?.data?.map((item: Blog) => (
               <ItemRecentBlog blog={item} key={item.id} />
             ))}
+        {!isLoading && data?.data?.length === 0 && (
+          <p className="text-gray-500 text-sm py-2"> No recent blogs found</p>
+        )}
       </div>
     </>
   );

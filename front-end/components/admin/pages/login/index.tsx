@@ -15,17 +15,21 @@ const Login = () => {
   const mutation = useMutation({
     mutationKey: ["LOGIN"],
     mutationFn: async (data: any) => {
+      $$.loading(true);
       const result = await userService.login(data);
       return result;
     },
     onSuccess: (data) => {
+      $$.loading(false);
       toast("Login Successful", {
         description: "You have successfully logged into the system.",
       });
       Cookies.set(ADMIN_SESSION, JSON.stringify(data.access_token));
-      router.push("/admin/cars");
+      router.push("/admin/blogs");
     },
     onError: () => {
+      $$.loading(false);
+      Cookies.remove(ADMIN_SESSION);
       toast("Login Failed", {
         description: "Please check your username and password.",
       });

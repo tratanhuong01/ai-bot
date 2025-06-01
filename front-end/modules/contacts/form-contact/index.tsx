@@ -6,12 +6,12 @@ import { FormGroup } from "@/components/shared/form-group";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import useComingSoon from "@/hooks/use-coming-soon";
 import { SendIcon } from "lucide-react";
 import Image from "next/image";
-import { schema } from "./schema";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const FormContact = () => {
+  const { comingSoonContent, handleComingSoon } = useComingSoon(true);
   return (
     <div className="flex flex-col lg:flex-row gap-8 py-16 lg:gap-16 lg:py-32">
       <div className="lg:w-1/2 flex flex-col gap-2">
@@ -26,10 +26,10 @@ const FormContact = () => {
           freelancers.
         </p>
         <Form
-          onSubmit={(data) => {
-            console.log("Form submitted with data:", data);
+          onSubmit={() => {
+            handleComingSoon();
           }}
-          zodResolver={zodResolver(schema)}
+          // zodResolver={zodResolver(schema)}
         >
           <div className="flex flex-col gap-4 mt-12">
             <FormGroup name="name" label="" standard>
@@ -92,6 +92,7 @@ const FormContact = () => {
           fill
         />
       </div>
+      {comingSoonContent}
     </div>
   );
 };

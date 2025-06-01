@@ -13,8 +13,13 @@ import CarouselButton from "./carousel-button";
 import { useQuery } from "@tanstack/react-query";
 import { blogService } from "@/services/blog.service";
 import { Blog } from "@/interfaces/blog.interface";
+import { useRouter } from "next/navigation";
 
 const LatestBlog = () => {
+  const router = useRouter();
+  const handleSeeMore = () => {
+    router.push("/blogs");
+  };
   const { data, isLoading } = useQuery({
     queryKey: ["latest-blog"],
     queryFn: async () => {
@@ -41,7 +46,7 @@ const LatestBlog = () => {
         <p className="text-4xl md:text-5xl font-bold py-4">
           Latest News & Articles
         </p>
-        <Button className="w-32 md:w-40 h-10 md:h-12">
+        <Button onClick={handleSeeMore} className="w-32 md:w-40 h-10 md:h-12">
           <PenIcon />
           <span>See more</span>
         </Button>

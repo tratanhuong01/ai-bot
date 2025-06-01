@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { HeaderModeType } from "@/types/common";
 import Breadcrumbs from "@/components/shared/breadcrumbs";
+import useComingSoon from "@/hooks/use-coming-soon";
 
 const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
+  const { handleComingSoon, comingSoonContent } = useComingSoon(true);
   return (
     <div
       className={`bg-cover bg-center ${
@@ -52,7 +54,9 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
               />
               <span className="text-gray-700">|</span>
               <span className="text-gray-700 px-4 cursor-pointer">deep ai</span>
-              <Button className="h-12 w-32">Generate</Button>
+              <Button onClick={handleComingSoon} className="h-12 w-32">
+                Generate
+              </Button>
             </div>
             <div className="flex flex-row gap-3 mt-4 flex-wrap text-sm md:text-base items-center">
               <span>Popular tag:</span>
@@ -82,6 +86,7 @@ const Banner = ({ headerMode = "banner", title }: HeaderModeType) => {
           className="lg:block hidden absolute right-0 bottom-0"
         />
       )}
+      {comingSoonContent}
     </div>
   );
 };

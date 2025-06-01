@@ -38,6 +38,7 @@ const httpRequestService = async (
       if (result.code === "access_denied") {
         redirect("/admin/login");
       }
+
       throw new Error(JSON.stringify(result));
     }
     return result;

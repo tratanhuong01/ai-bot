@@ -103,7 +103,7 @@ const FormContent = ({
         </FormField>
       </FormGroup>
 
-      <Button type="submit" className="w-full" disabled={isLoading}>
+      <Button type="submit" className="w-full bg-primary" disabled={isLoading}>
         {id ? "Update" : "Create"}
       </Button>
     </div>

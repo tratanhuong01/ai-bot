@@ -10,7 +10,7 @@ import {
 import cookies from "js-cookie";
 import { LockIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useState } from "react";
 import Footer from "./footer";
 
 type ContainerProps = {
@@ -51,7 +51,7 @@ const Wrapper = ({ children }: ContainerProps) => {
       try {
         await userService.checkToken();
         if (pathname === "/admin/login") {
-          router.push("/admin/cars");
+          router.push("/admin/blogs");
         }
       } catch {
         cookies.remove(ADMIN_SESSION);
@@ -73,7 +73,7 @@ const Wrapper = ({ children }: ContainerProps) => {
       return true;
     },
   });
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (pathname === "/#teams") {
       document.querySelector("#teams")?.scrollIntoView({
         behavior: "smooth",

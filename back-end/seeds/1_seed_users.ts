@@ -30,7 +30,7 @@ export async function seed(knex: Knex): Promise<void> {
         display_name: "99 Nguyễn Tri Phương, Thanh Khê, Đà Nẵng",
       },
       title: "Software Engineer",
-      avatar: "resources/static/images/users/packer.tra.jpg",
+      avatar: "resources/static/images/users/avatars/packer-tra.jpg",
     },
     {
       id: "d2efe63f-cac7-4830-9df4-178a610b0b07",
@@ -44,7 +44,7 @@ export async function seed(knex: Knex): Promise<void> {
         display_name: "33 Phan Đình Phùng, Hải Châu, Đà Nẵng",
       },
       title: "DH, Software Engineer",
-      avatar: "resources/static/images/users/bellamy.nguyen.jpg",
+      avatar: "resources/static/images/users/avatars/bellamy-nguyen.jpg",
     },
     {
       id: "39cad972-881d-4c90-a1ce-127f5e31f7a0",
@@ -58,7 +58,7 @@ export async function seed(knex: Knex): Promise<void> {
         display_name: "66 Lý Thái Tổ, Thanh Khê, Đà Nẵng",
       },
       title: "Software Engineer",
-      avatar: "resources/static/images/users/caleb.nguyen.jpg",
+      avatar: "resources/static/images/users/avatars/caleb-nguyen.jpg",
     },
     {
       id: "ea5574ca-5d94-48d2-bd2b-38d9606b801b",
@@ -72,7 +72,7 @@ export async function seed(knex: Knex): Promise<void> {
         display_name: "111 Lê Duẩn, Hải Châu, Đà Nẵng",
       },
       title: "Software Engineer",
-      avatar: "resources/static/images/users/sargon.hoang.jpg",
+      avatar: "resources/static/images/users/avatars/sargon-hoang.jpg",
     },
   ];
 

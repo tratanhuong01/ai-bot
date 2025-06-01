@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import React from "react";
 
 const AboutUs = () => {
   return (
@@ -40,7 +38,7 @@ const AboutUs = () => {
             <p>Years</p>
           </li>
         </ul>
-        <Button className="h-12">About Us</Button>
+        {/* <Button className="h-12">About Us</Button> */}
       </div>
     </div>
   );

@@ -18,6 +18,7 @@ export class BlogController {
           .replace(/\\+/g, "/")
           .trim(),
       },
+      tags: JSON.parse(payload.tags),
     });
     res.status(result.status).json(result);
   }
@@ -34,6 +35,7 @@ export class BlogController {
           : blog.thumbnail,
       },
       thumbnailOld: blog?.thumbnail,
+      tags: JSON.parse(payload.tags),
     });
     res.status(result.status).json(result);
   }

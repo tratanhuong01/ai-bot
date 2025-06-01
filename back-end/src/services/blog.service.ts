@@ -17,7 +17,8 @@ export class BlogService {
         "thumbnail",
         "created_at",
         "updated_at",
-        "slug"
+        "slug",
+        "tags"
       );
       if (filters.search) {
         query.whereILike("title", `%${filters.search}%`);
@@ -61,7 +62,10 @@ export class BlogService {
 
   async createBlog(payload: BlogCreatePayLoad) {
     try {
-      await BlogRepository.query().insert({ ...payload.blog });
+      await BlogRepository.query().insert({
+        ...payload.blog,
+        tags: payload.tags ? JSON.stringify(payload.tags) : null,
+      });
       return {
         data: true,
         status: 200,
@@ -84,6 +88,7 @@ export class BlogService {
       await BlogRepository.query()
         .update({
           ...payload.blog,
+          tags: payload.tags ? JSON.stringify(payload.tags) : null,
         })
         .where("id", payload.blog.id);
       return {
@@ -147,7 +152,16 @@ export class BlogService {
     try {
       const result = await BlogRepository.query()
         .withGraphFetched("category")
-        .select()
+        .select(
+          "id",
+          "title",
+          "description",
+          "thumbnail",
+          "created_at",
+          "updated_at",
+          "slug",
+          "tags"
+        )
         .whereNot(column, value)
         .orderBy("created_at", "DESC")
         .offset(0)
