@@ -6,7 +6,12 @@ dotenv.config();
 
 const knex = Knex({
   client: "pg",
-  connection: process.env.DATABASE_URL,
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false, // This is necessary for Heroku Postgres
+    },
+  },
 });
 
 Model.knex(knex);

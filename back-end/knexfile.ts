@@ -6,7 +6,12 @@ dotenv.config();
 const config: { [key: string]: Knex.Config } = {
   development: {
     client: "pg",
-    connection: process.env.DATABASE_URL,
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false, // This is necessary for Heroku Postgres
+      },
+    },
     migrations: {
       directory: "./migrations",
     },
@@ -16,7 +21,12 @@ const config: { [key: string]: Knex.Config } = {
   },
   production: {
     client: "pg",
-    connection: process.env.DATABASE_URL,
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false, // This is necessary for Heroku Postgres
+      },
+    },
     migrations: {
       directory: "./migrations",
     },

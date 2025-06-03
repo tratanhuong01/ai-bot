@@ -7,6 +7,6 @@
     "esModuleInterop": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts", "src/knex.ts"],
+  "include": ["src/**/*.ts", "src/knex.ts", "src/testConnection.js"],
   "exclude": ["node_modules", "dist"]
 }
