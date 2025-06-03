@@ -1,39 +1,38 @@
 import type { Knex } from "knex";
 import dotenv from "dotenv";
-
 dotenv.config();
 
+const sharedConfig = {
+  client: "pg",
+  migrations: {
+    directory: "./migrations",
+  },
+  seeds: {
+    directory: "./seeds",
+  },
+};
+
+const development: Knex.Config = {
+  ...sharedConfig,
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false, // Required for Supabase or Heroku SSL
+    },
+  },
+};
+
+const production: Knex.Config = {
+  ...sharedConfig,
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  },
+};
+
 const config: { [key: string]: Knex.Config } = {
-  development: {
-    client: "pg",
-    connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false, // This is necessary for Heroku Postgres
-      },
-    },
-    migrations: {
-      directory: "./migrations",
-    },
-    seeds: {
-      directory: "./seeds",
-    },
-  },
-  production: {
-    client: "pg",
-    connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false, // This is necessary for Heroku Postgres
-      },
-    },
-    migrations: {
-      directory: "./migrations",
-    },
-    seeds: {
-      directory: "./seeds",
-    },
-  },
+  development,
+  production,
 };
 
 export default config;
