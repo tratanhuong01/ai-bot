@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "lib": ["es2020"],
+    "target": "ES2020", // modern JavaScript target
+    "module": "CommonJS", // Node.js uses CommonJS
+    "rootDir": "./src", // source files directory
+    "outDir": "./dist", // compiled files go here
     "strict": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "skipLibCheck": true,
-    "types": ["node"],
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts", "src/knex.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

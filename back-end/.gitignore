@@ -16,7 +16,7 @@
 # resources
 /resources
 
-/back-end/dist
+/dist
 
 # next.js
 /.next/
