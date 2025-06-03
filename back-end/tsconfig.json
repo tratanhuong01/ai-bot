@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "esnext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "nodenext"
+    "types": ["node"]
   },
   "include": ["src/**/*.ts", "src/knex.ts"],
   "exclude": ["node_modules", "dist"]
