@@ -43,7 +43,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon src/config/server.ts",
+    "dev": "nodemon --watch src --exec ts-node src/config/server.ts",
     "migrate:prod": "knex migrate:latest --env production",
     "seed:prod": "knex seed:run --env production"
   }
