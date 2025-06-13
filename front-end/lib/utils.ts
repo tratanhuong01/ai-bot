@@ -10,5 +10,8 @@ export const getImageUrl = (imagePath: string) => {
   if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
     return imagePath;
   }
-  return `http://localhost:5000/${imagePath.replace(/\\/g, "/")}`;
+  return `${[process.env.NEXT_PUBLIC_SERVER_URL]}/${imagePath.replace(
+    /\\/g,
+    "/"
+  )}`;
 };
