@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "ai-bot-m91c.onrender.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
     ],
   },
   experimental: {
