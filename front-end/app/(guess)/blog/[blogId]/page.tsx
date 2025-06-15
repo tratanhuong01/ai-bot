@@ -1,10 +1,9 @@
 import MainLayout from "@/layout/main-layout";
+import { getImageUrl } from "@/lib/utils";
 import BlogDetail from "@/modules/blog-detail";
 import { blogService } from "@/services/blog.service";
-import { generateSlug } from "@/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import React from "react";
 
 export const generateMetadata = async (params: any): Promise<Metadata> => {
   const response = await params.params;
@@ -15,7 +14,8 @@ export const generateMetadata = async (params: any): Promise<Metadata> => {
     description: result?.description,
     openGraph: {
       images: {
-        url: generateSlug(result?.thumbnail),
+        url: getImageUrl(result?.thumbnail),
+        secureUrl: getImageUrl(result?.thumbnail),
         width: 400,
         height: 650,
         alt: result?.title,
