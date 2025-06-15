@@ -3,6 +3,7 @@ import BlogDetail from "@/modules/blog-detail";
 import { blogService } from "@/services/blog.service";
 import { generateSlug } from "@/utils";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export const generateMetadata = async (params: any): Promise<Metadata> => {
@@ -30,6 +31,9 @@ export const generateMetadata = async (params: any): Promise<Metadata> => {
 const BlogPage = async ({ params }: any) => {
   const { blogId } = await params;
   const blog = await blogService.getById("slug", blogId);
+  if (!blog?.data) {
+    notFound();
+  }
   return (
     <MainLayout headerMode="breadcrumbs" title="Blog Details">
       <BlogDetail blog={blog?.data} />

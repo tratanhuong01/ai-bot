@@ -1,7 +1,6 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 const httpRequestService = async (
   url: string,
@@ -35,10 +34,6 @@ const httpRequestService = async (
       }
     ).then((res) => res.json());
     if (result.status !== 200) {
-      if (result.code === "access_denied") {
-        redirect("/admin/login");
-      }
-
       throw new Error(JSON.stringify(result));
     }
     return result;

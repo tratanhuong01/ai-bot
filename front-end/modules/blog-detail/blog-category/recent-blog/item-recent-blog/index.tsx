@@ -6,6 +6,7 @@ import {
 import { Blog } from "@/interfaces/blog.interface";
 import { DotIcon } from "lucide-react";
 import moment from "moment";
+import Link from "next/link";
 import React from "react";
 
 type ItemRecentBlogProps = {
@@ -28,16 +29,18 @@ const ItemRecentBlog = ({ blog, isLoading }: ItemRecentBlogProps) => {
         <span>{moment(blog?.created_at).format("MMMM D, YYYY")}</span>
         <DotIcon />
       </div>
-      <Tooltip>
-        <TooltipTrigger>
-          <p className="text-xl md:text-2xl font-semibold hover:underline line-clamp-1 text-left">
+      <Link href={`/blog/${blog?.id}`}>
+        <Tooltip>
+          <TooltipTrigger>
+            <p className="text-xl md:text-2xl font-semibold hover:underline line-clamp-1 text-left">
+              {blog?.title ?? "AI Awakenings A Journey into the Future"}
+            </p>
+          </TooltipTrigger>
+          <TooltipContent>
             {blog?.title ?? "AI Awakenings A Journey into the Future"}
-          </p>
-        </TooltipTrigger>
-        <TooltipContent>
-          {blog?.title ?? "AI Awakenings A Journey into the Future"}
-        </TooltipContent>
-      </Tooltip>
+          </TooltipContent>
+        </Tooltip>
+      </Link>
     </div>
   );
 };

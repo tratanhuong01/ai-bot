@@ -10,7 +10,7 @@ import {
 import cookies from "js-cookie";
 import { LockIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { ReactNode, useEffect, useLayoutEffect, useState } from "react";
+import { ReactNode, useLayoutEffect, useState } from "react";
 import Footer from "./footer";
 
 type ContainerProps = {
@@ -35,7 +35,6 @@ const Wrapper = ({ children }: ContainerProps) => {
   const loadData = async () => {
     let accept = true;
     if (!pathname.startsWith("/admin")) {
-      setLoading(false);
       return true;
     }
     if (!sessionStorage.getItem("admin_verified")) {
@@ -58,7 +57,6 @@ const Wrapper = ({ children }: ContainerProps) => {
         router.push(`/admin/login`);
       }
     }
-    setLoading(false);
     return accept;
   };
   useQuery({
@@ -68,6 +66,7 @@ const Wrapper = ({ children }: ContainerProps) => {
       if (isAccess === undefined) {
         response = await loadData();
         setIsAccess(response);
+        setLoading(false);
       }
 
       return true;

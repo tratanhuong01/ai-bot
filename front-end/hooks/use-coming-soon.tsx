@@ -11,7 +11,7 @@ const useComingSoon = (isDialog?: boolean) => {
     <>
       {isDialog ? (
         <Dialog open={comingSoon} onOpenChange={setComingSoon}>
-          <DialogContent>
+          <DialogContent hideCloseButton>
             <DialogTitle>Coming soon</DialogTitle>
             <ComingSoon />
           </DialogContent>
